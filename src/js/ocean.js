@@ -44,7 +44,8 @@ module.exports = /** @class */ (function () {
         return currOcean;
     };
     Ocean.prototype.feed = function (data) {
-        //add strings to ocean
+        //adds strings to ocean from storage (first in, first out)
+        //if storage is empty, adds directly to ocean
     };
     Ocean.prototype.print = function () {
         console.log(this.Ocean);

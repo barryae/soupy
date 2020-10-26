@@ -1,9 +1,9 @@
 
 module.exports = class Ocean {
-    private size: [number, number]
-    private seed: string[]
-    private Ocean: any []
-    private storage: string[] = []
+    size: [number, number]
+    seed: string[]
+    Ocean: any []
+    storage: string[] = []
 
     constructor(size:[number, number], seed:string[]){
         this.size = size
@@ -11,7 +11,7 @@ module.exports = class Ocean {
         this.Ocean = this.create()
     }
 
-    private create(){
+    create(){
         const width = this.size[0]
         const height = this.size[1]
         const fillingOcean = [] as any
@@ -29,7 +29,7 @@ module.exports = class Ocean {
         return seededOcean;
     }
 
-    private addSeed(seed: string[], currOcean: any[]){
+    addSeed(seed: string[], currOcean: any[]){
         const totalArea = this.size[0] * this.size[1]
 
         if(totalArea<seed.length){
@@ -58,7 +58,8 @@ module.exports = class Ocean {
     }
 
     feed(data: string[]){
-        //add strings to ocean
+        //adds strings to ocean from storage (first in, first out)
+        //if storage is empty, adds directly to ocean
     }
 
     print(){
