@@ -1,6 +1,7 @@
 "use strict";
 module.exports = /** @class */ (function () {
     function Ocean(size, seed) {
+        this.age = 0;
         this.storage = [];
         this.size = size;
         this.seed = seed;

@@ -1,6 +1,7 @@
 
 module.exports = class Ocean {
     size: [number, number]
+    age: number = 0
     seed: string[]
     Ocean: any []
     storage: string[] = []

@@ -3,7 +3,8 @@ module.exports = class Sorter{
     directives: string[] = ["alphabetize"]
     currDirective: string
     record: any = {
-        "born": "",
+        "born": null,
+        "age": 0,
         "input": {},
         "output": {
             "alphabetize": [],
@@ -14,7 +15,7 @@ module.exports = class Sorter{
     capacity: number;
 
     constructor(environment: typeof ocean, directive: string, capacity: number){
-        this.record.born = new Date
+        this.record.born = ocean.age
         this.capacity =  capacity
         this.environment = environment
 
@@ -28,6 +29,7 @@ module.exports = class Sorter{
     }
 
     live(){
+        this.record.age++
         while(!(this.stomach.length>this.capacity)){
             let data: string = this.search()
             this.eat(data)

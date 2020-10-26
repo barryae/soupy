@@ -3,7 +3,8 @@ module.exports = /** @class */ (function () {
     function Sorter(environment, directive, capacity) {
         this.directives = ["alphabetize"];
         this.record = {
-            "born": "",
+            "born": null,
+            "age": 0,
             "input": {},
             "output": {
                 "alphabetize": [],
@@ -11,7 +12,7 @@ module.exports = /** @class */ (function () {
             "died": "",
         };
         this.stomach = [];
-        this.record.born = new Date;
+        this.record.born = ocean.age;
         this.capacity = capacity;
         this.environment = environment;
         if (!this.directives.includes(directive)) {
@@ -23,6 +24,7 @@ module.exports = /** @class */ (function () {
         }
     }
     Sorter.prototype.live = function () {
+        this.record.age++;
         while (!(this.stomach.length > this.capacity)) {
             var data = this.search();
             this.eat(data);
