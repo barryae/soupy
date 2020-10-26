@@ -4,6 +4,6 @@ const sorter = require("./orgs/sorter")
 
 
 const newOcean = new ocean([2,3],seed.data)
-const sorterA = new sorter("alphabetize")
+const sorterA = new sorter(newOcean,"alphabetize",5)
 newOcean.print()
 sorterA.print()
